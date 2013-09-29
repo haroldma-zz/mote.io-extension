@@ -11,7 +11,7 @@ exec(function(){
 	mote.io.remote = {
     api_version: '0.1',
     app_name: 'tunein',
-    twitter: 'rdio',
+    twitter: 'tunein',
     action: 'listening to',
     display_input: true,
     update: function(force) {
