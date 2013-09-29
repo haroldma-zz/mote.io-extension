@@ -10,17 +10,17 @@ exec(function(){
 
 	mote.io.remote = {
     api_version: '0.1',
-    app_name: 'Pandora',
+    app_name: 'Spotify',
     display_input: true,
     update: function(force) {
 
-      var thisArtist = $('.playerBarSong').text(),
-        thisSong = $('.playerBarArtist').text(),
-        thisImage = $('.playerBarArt').prop('src');
+      var thisArtist = $('.track-name').text(),
+        thisSong = $('.track-artist').text(),
+        thisImage = $('.sp-image-wrapper').prop('url');
         mote.io.notify(thisArtist, thisSong, thisImage, force);
 
       // transfer button states
-      if($('.pauseButton').is(':visible')) {
+      if($('.play-pause').is(':visible')) {
         mote.io.updateButton('play', 'pause', null, force);
       } else {
         mote.io.updateButton('play', 'play', null, force);
@@ -63,10 +63,10 @@ exec(function(){
           },
           {
             press: function () {
-              if($('.pauseButton').is(':visible')){
-                $('.pauseButton a').click();
+              if($('.play-pause').is(':visible')){
+                $('.play-pause a').click();
               } else {
-                $('.playButton a').click();
+                $('.play-pause a').click();
               }
             },
             icon: 'play',
