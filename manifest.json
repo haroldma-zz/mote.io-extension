@@ -117,6 +117,26 @@
         "remotes/google-drive-presentation.js"
       ],
       "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://play.spotify.com/*"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/spotified.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://tunein.com/*"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/tunein.js"
+      ],
+      "run_at": "document_start"
     }
   ]
 }
