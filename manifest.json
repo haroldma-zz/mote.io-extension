@@ -79,6 +79,16 @@
     },
     {
       "matches": [
+        "https://play.google.com/music/*"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/google-play-music.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
         "*://*.soundcloud.com/*"
       ],
       "js": [
