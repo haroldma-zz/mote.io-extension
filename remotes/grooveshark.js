@@ -68,21 +68,24 @@ exec(function(){
 	            $('#play-prev').click();
 	          },
 	          icon: 'backward',
-	          hash: 'back'
+	          hash: 'back',
+	          leapmotion: 'swipe-right'
 	        },
 	        {
 	          press: function () {
 	            $('#play-pause').click();
 	          },
 	          icon: 'play',
-	          hash: 'play'
+	          hash: 'play',
+	          leapmotion: 'screen-tap'
 	        },
 	        {
 	          press: function () {
 	            $('#play-next').click();
 	          },
 	          icon: 'forward',
-	          hash: 'next'
+	          hash: 'next',
+	          leapmotion: 'swipe-left'
 	        }
 	      ]
 	    }

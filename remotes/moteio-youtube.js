@@ -40,7 +40,8 @@ exec(function(){
             press: function () {
             	app.previousVideo();
             },
-            icon: 'fast-backward'
+            icon: 'fast-backward',
+            leapmotion: 'swipe-right'
           },
           {
             press: function () {
@@ -51,19 +52,22 @@ exec(function(){
             	 }
             },
             icon: 'pause',
-            hash: 'play'
+            hash: 'play',
+            leapmotion: 'screen-tap'
           },
           {
             press: function () {
             	app.nextVideo();
             },
-            icon: 'fast-forward'
+            icon: 'fast-forward',
+            leapmotion: 'swipe-left'
           },
           {
             press: function () {
             	app.showInfo();
             },
-            icon: 'info-sign'
+            icon: 'info-sign',
+            leapmotion: 'key-tap'
           }
         ]
       },

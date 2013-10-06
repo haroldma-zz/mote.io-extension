@@ -52,14 +52,16 @@ exec(function(){
               $('.thumbDownButton a').click();
             },
             icon: 'thumbs-down',
-            hash: 'down'
+            hash: 'down',
+            leapmotion: 'circle-left'
           },
           {
             press: function () {
               $('.thumbUpButton a').click();
             },
             icon: 'thumbs-up',
-            hash: 'up'
+            hash: 'up',
+            leapmotion: 'circle-right'
           },
           {
             press: function () {
@@ -70,14 +72,16 @@ exec(function(){
               }
             },
             icon: 'play',
-            hash: 'play'
+            hash: 'play',
+            leapmotion: 'key-tap'
           },
           {
             press: function () {
               $('.skipButton a').click();
             },
             icon: 'fast-forward',
-            hash: 'skip'
+            hash: 'skip',
+            leapmotion: 'swipe-left'
           }
         ]
       },

@@ -147,25 +147,29 @@ exec(function() {
             $('.skipControl__previous').click();
           },
           icon: 'backward',
-          hash: 'back'
+          hash: 'back',
+          leapmotion: 'swipe-right'
         }, {
           press: function() {
             $('.playControl').click();
           },
           icon: 'play',
-          hash: 'play'
+          hash: 'play',
+          leapmotion: 'key-tap'
         }, {
           press: function() {
             $('.sc-button-like').click();
           },
           icon: 'heart',
-          hash: 'heart'
+          hash: 'heart',
+          leapmotion: 'screen-tap'
         }, {
           press: function() {
             $('.skipControl__next').click();
           },
           icon: 'forward',
-          hash: 'next'
+          hash: 'next',
+          leapmotion: 'swipe-left'
         }]
       }, {
         type: 'buttons',
@@ -240,25 +244,29 @@ exec(function() {
             $('.skipControl__previous').click();
           },
           icon: 'backward',
-          hash: 'back'
+          hash: 'back',
+          leapmotion: 'swipe-right'
         }, {
           press: function() {
             $('.playControl').click();
           },
           icon: 'play',
-          hash: 'play'
+          hash: 'play',
+          leapmotion: 'key-tap'
         }, {
           press: function() {
             $('.sc-button-like').click();
           },
           icon: 'heart',
-          hash: 'heart'
+          hash: 'heart',
+          leapmotion: 'screen-tap'
         }, {
           press: function() {
             $('.skipControl__next').click();
           },
           icon: 'forward',
-          hash: 'next'
+          hash: 'next',
+          leapmotion: 'swipe-left'
         }]
       }, {
         type: 'select',

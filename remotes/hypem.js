@@ -68,14 +68,16 @@ exec(function(){
 	            $('#playerPrev').click();
 	          },
 	          icon: 'backward',
-	          hash: 'back'
+	          hash: 'back',
+	          leapmotion: 'swipe-right'
 	        },
 	        {
 	          press: function () {
 	            $('#playerPlay').click();
 	          },
 	          icon: 'play',
-	          hash: 'play'
+	          hash: 'play',
+	          leapmotion: 'screen-tap'
 	        },
 	        {
 	          press: function () {
@@ -86,14 +88,16 @@ exec(function(){
 	            }
 	          },
 	          icon: 'heart',
-	          hash: 'heart'
+	          hash: 'heart',
+	          leapmotion: 'key-tap'
 	        },
 	        {
 	          press: function () {
 	            $('#playerNext').click();
 	          },
 	          icon: 'forward',
-	          hash: 'next'
+	          hash: 'next',
+	          leapmotion: 'swipe-left'
 	        }
 	      ]
 	    },

@@ -40,7 +40,8 @@ exec(function(){
               $('.play_pause_button').click();
             },
             icon: 'play',
-            hash: 'play'
+            hash: 'play',
+            leapmotion: 'screen-tap'
           },
           {
             press: function () {
@@ -51,7 +52,8 @@ exec(function(){
               }
             },
             icon: 'heart',
-            hash: 'heart'
+            hash: 'heart',
+            leapmotion: 'key-tap'
           },
           {
             press: function () {
@@ -82,25 +84,29 @@ exec(function(){
             press: function () {
               $('.previous_button').click();
             },
-            icon: 'fast-backward'
+            icon: 'fast-backward',
+            leapmotion: 'swipe-left'
           },
           {
             press: function () {
               $('.rewind_button').click();
             },
-            icon: 'backward'
+            icon: 'backward',
+            leapmotion: 'circle-left'
           },
           {
             press: function () {
               $('.fast_forward_button').click();
             },
-            icon: 'forward'
+            icon: 'forward',
+            leapmotion: 'circle-right'
           },
           {
             press: function () {
               $('.next_button').click();
             },
-            icon: 'fast-forward'
+            icon: 'fast-forward',
+            leapmotion: 'swipe-right'
           }
         ]
       }

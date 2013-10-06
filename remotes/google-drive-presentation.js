@@ -43,14 +43,16 @@ exec(function(){
 	          	previous();
 	          },
 	          icon: 'chevron-left',
-	          hash: 'left'
+	          hash: 'left',
+	          leapmotion: 'swipe-right'
 	        },
 	        {
 	          press: function () {
 	          	next();
 	          },
 	          icon: 'chevron-right',
-	          hash: 'right'
+	          hash: 'right',
+	          leapmotion: 'swipe-left'
 	        }
 	      ]
 	    }

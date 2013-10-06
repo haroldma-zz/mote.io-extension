@@ -32,28 +32,32 @@ exec(function(){
               $('.prev').click();
             },
             icon: 'backward',
-            hash: 'back'
+            hash: 'back',
+            leapmotion: 'swipe-right'
           },
           {
             press: function () {
               $('.play_pause').click();
             },
             icon: 'play',
-            hash: 'play'
+            hash: 'play',
+            leapmotion: 'key-tap'
           },
           {
             press: function () {
               $('.next').click();
             },
             icon: 'forward',
-            hash: 'next'
+            hash: 'next',
+            leapmotion: 'swipe-left'
           },
           {
             press: function () {
               $('.shuffle').click();
             },
             icon: 'random',
-            hash: 'random'
+            hash: 'random',
+            leapmotion: 'screen-tap'
           }
         ]
       },
