@@ -14,6 +14,9 @@ exec(function(){
     twitter: 'tunein',
     action: 'listening to',
     display_input: true,
+    init: function() {
+      $($('.chrome._playTarget')[0]).click();
+    },
     update: function(force) {
 
       var nowPlaying = $('.line1').text(),
@@ -28,13 +31,12 @@ exec(function(){
         mote.io.updateButton('play', 'play', null, force);
       }
 
-      
     },
     blocks: [
       {
         type: 'notify',
         share: true
-      }, 
+      },
       {
         type: 'search',
         action: function(query) {
@@ -55,47 +57,9 @@ exec(function(){
             icon: 'play',
             hash: 'play'
           },
-          
+
         ]
-      },
-      {type: 'buttons',
-	      data: [
-	       {
-	          press: function () {
-	          window.location = "/radio/Music-g1/";
-	          },
-	          icon: 'music'
-	        },
-	        {
-	          press: function () {
-	          window.location = "/radio/Sports-g323/";
-	          },
-	          icon: 'trophy'
-	        }, 
-	        {
-	          press: function () {
-	          window.location = "/radio/News-c57922/";
-	          },
-	          icon: 'bullhorn'
-	        }, 
-	        ]
-      },
-      {type: 'buttons',
-	      data: [
-	        {
-	          press: function () {
-	          window.location = "/radio/Spoken-g2/";
-	          },
-	          icon: 'quote-left'
-	        }, 
-	        {
-	          press: function () {
-	          window.location = "/radio/Browse-Locations-r0/";
-	          },
-	          icon: 'globe'
-	        },
-	        ]
-      },
+      }
     ]
   };
 
