@@ -137,6 +137,19 @@
         "remotes/tunein.js"
       ],
       "run_at": "document_start"
+    },
+    {
+      "matches":[
+        "*://*.:*/web/index.html*"
+      ],
+      "css":[
+        "css/plex.css"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/plex.js"
+      ],
+      "run_at": "document_start"
     }
   ]
 }
