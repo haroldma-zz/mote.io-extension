@@ -3,25 +3,25 @@ exec(function() {
   var mIndex = -1;
 
 
-  var selectorBlock = {
-    type: 'select',
-    title: 'Change Media',
-    data: [{
-      optgroup: 'Video',
-      text: 'TV Shows',
-      action: function() {
-        window.location = $($('#section-dropdown-list .dropdown-menu-large li a')[1]).attr('href');
-        mIndex = -1;
-      }
-    }, {
-      optgroup: 'Video',
-      text: 'Movies',
-      action: function() {
-        window.location = $($('#section-dropdown-list .dropdown-menu-large li a')[0]).attr('href');
-        mIndex = -1;
-      }
-    }]
-  }
+  // var selectorBlock = {
+  //   type: 'select',
+  //   title: 'Change Media',
+  //   data: [{
+  //     optgroup: 'Video',
+  //     text: 'TV Shows',
+  //     action: function() {
+  //       window.location = $($('#section-dropdown-list .dropdown-menu-large li a')[1]).attr('href');
+  //       mIndex = -1;
+  //     }
+  //   }, {
+  //     optgroup: 'Video',
+  //     text: 'Movies',
+  //     action: function() {
+  //       window.location = $($('#section-dropdown-list .dropdown-menu-large li a')[0]).attr('href');
+  //       mIndex = -1;
+  //     }
+  //   }]
+  // }
 
 
   playerBlock = [{
@@ -31,11 +31,16 @@ exec(function() {
     type: 'buttons',
     data: [{
       press: function() {
+      if ($('.select-list').length == 0) {
         if (jwplayer(player).getState() == 'PLAYING') {
           jwplayer(player).pause();
         } else {
           jwplayer(player).play();
         }
+      }
+      else{
+        $('.select-list').find('a')[0].click();
+    }
       },
       icon: 'play',
       hash: 'play'
@@ -107,9 +112,16 @@ exec(function() {
         }
       },
       icon: 'volume-up'
+    }, {
+      press: function() {
+        if ($('.glyphicon.home').length != 0) {
+          $('.glyphicon.home').click()
+          mIndex = -1;
+        }
+      },
+      icon: 'home'
     }]
-  },
-  selectorBlock]
+  }]
 
 
 
@@ -119,9 +131,6 @@ exec(function() {
       window.location = "#!/search/" + encodeURIComponent(query);
       mIndex = -1;
     }
-  }, {
-    type: 'buttons',
-    data: []
   }, {
     type: 'buttons',
     data: [{
@@ -185,9 +194,16 @@ exec(function() {
         mIndex = -1;
       },
       icon: 'refresh'
+    }, {
+      press: function() {
+        if ($('.glyphicon.home').length != 0) {
+          $('.glyphicon.home').click()
+          mIndex = -1;
+        }
+      },
+      icon: 'home'
     }]
-  },
-  selectorBlock
+  }
 
   ];
 
@@ -201,7 +217,7 @@ exec(function() {
     update: function(force) {
 
       //mote.io.reciever.sendRemote
-      if (pflag) {
+      if (pflag && $('.select-list').length == 0) {
         if (jwplayer(player).getState() == 'PLAYING') {
           mote.io.updateButton('play', 'pause', null, force);
         } else {
@@ -223,9 +239,7 @@ exec(function() {
       pflag = true;
       mote.io.remote.blocks = playerBlock;
       mote.io.receiver.sendRemote();
-      if ($('.select-list').length != 0) {
-        $('.select-list').find('a')[0].click();
-      }
+
     } else if (pflag == true && parts[9] != "player") {
       pflag = false;
       mote.io.remote.blocks = navBlocks;

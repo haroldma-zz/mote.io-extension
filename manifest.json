@@ -142,9 +142,6 @@
       "matches":[
         "*://*.:*/web/index.html*"
       ],
-      "css":[
-        "css/plex.css"
-      ],
       "js": [
         "moteio.js",
         "remotes/plex.js"
