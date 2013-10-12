@@ -342,7 +342,7 @@ mote.io.remote =  {
 
 ## jQuery
 
-The mote.io plugin provides you with jQuery for free by using the ```jQ``` variable.
+The mote.io plugin provides you with jQuery for free by using the ```jQ``` variable. Not all of the examples may use ```jQ```. They may access the standard ```$``` which is actually provided by the website the code is injected onto, not Mote.io itself. Be careful with this one.
 
 ## Deferred Loading
 
