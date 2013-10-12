@@ -140,7 +140,7 @@
     },
     {
       "matches":[
-        "*://*.:*/web/index.html*"
+        "*://*/web/index.html*"
       ],
       "js": [
         "moteio.js",
