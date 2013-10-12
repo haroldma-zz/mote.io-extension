@@ -62,6 +62,10 @@ Chrome extensions are a hassle to refresh. You need to visit ```chrome://extensi
 
 You also may try [this extension](https://chrome.google.com/webstore/detail/quick-extension-reload/goeiakeofnlpkioeadcbocfifmgkidpb?hl=en-GB) that adds a shortcut to reload extensions.
 
+# Tips and Tricks
+
+Check out [extra section at the bottom of this doc](https://github.com/ianjennings/mote.io-extension/blob/master/README.md#additional-notes-and-workarounds) for some solutions to common questions.
+
 # Remote API
 
 You can find many examplees of remotes in the /remotes directory. A remote file looks like so:
@@ -334,11 +338,11 @@ mote.io.remote =  {
 }
 ```
 
-# Additional Notes
+# Additional Notes and Workarounds
 
 ## jQuery
 
-The mote.io plugin provides you with jQuery for free by using the ```jQ``` variable.
+The mote.io plugin provides you with jQuery for free by using the ```jQ``` variable. Not all of the examples may use ```jQ```. They may access the standard ```$``` which is actually provided by the website the code is injected onto, not the mote.io extension.
 
 ## Deferred Loading
 
@@ -348,4 +352,16 @@ A remote is only sent to the client once, when it is found on the webpage. Somet
 setTimeout(function(){
   mote.io.remote = {};
 }, 5000);
+```
+
+## Updating the remote on the phone
+
+Once the remote is sent, you can only update the button colors, icons, and notification text. 
+
+However, sometimes you just need to send the whole remote over. This is usually because the website you're building a remote for is a single page app.
+
+Use the following method to resend ```mote.io.remote``` to the phone. This function has no parameters, it simply looks for ```mote.io.remote``` and sends it over.
+
+```javascript
+mote.io.receiver.sendRemote();
 ```
