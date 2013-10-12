@@ -334,7 +334,7 @@ mote.io.remote =  {
 }
 ```
 
-# Additional Notes
+# Additional Notes and Workarounds
 
 ## jQuery
 
@@ -348,4 +348,16 @@ A remote is only sent to the client once, when it is found on the webpage. Somet
 setTimeout(function(){
   mote.io.remote = {};
 }, 5000);
+```
+
+## Updating the remote on the phone
+
+Once the remote is sent, you can only update the button colors, icons, and notification text. 
+
+However, sometimes you just need to send the whole remote over. This is usually because the website you're building a remote for is a single page app.
+
+Use the following method to resend ```mote.io.remote``` to the phone. This function has no parameters, it simply looks for ```mote.io.remote``` and sends it over.
+
+```javascript
+mote.io.receiver.sendRemote();
 ```
