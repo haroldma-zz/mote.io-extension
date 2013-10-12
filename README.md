@@ -62,6 +62,10 @@ Chrome extensions are a hassle to refresh. You need to visit ```chrome://extensi
 
 You also may try [this extension](https://chrome.google.com/webstore/detail/quick-extension-reload/goeiakeofnlpkioeadcbocfifmgkidpb?hl=en-GB) that adds a shortcut to reload extensions.
 
+# Tips and Tricks
+
+Check out [extra section at the bottom of this doc](https://github.com/ianjennings/mote.io-extension/blob/master/README.md#additional-notes-and-workarounds) for some solutions to common questions.
+
 # Remote API
 
 You can find many examplees of remotes in the /remotes directory. A remote file looks like so:
