@@ -6,7 +6,6 @@ exec(function () {
         display_input: true,
 
         init: function () {
-            window.location = 'https://play.google.com/music/listen#/all';
             if (jQ('.player-middle').children()[4].getAttribute('value') == "NO_SHUFFLE") {
                 jQ('.player-middle').children()[4].setAttribute('value', 'ALL_SHUFFLE');
             }
