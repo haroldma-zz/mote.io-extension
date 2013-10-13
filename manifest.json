@@ -89,7 +89,7 @@
     },
     {
       "matches": [
-        "*://*.twitch.tv/directory/*"
+        "*://*.twitch.tv/*"
       ],
       "js": [
         "moteio.js",
