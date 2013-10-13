@@ -6,7 +6,7 @@ exec(function(){
 
     return (res===-1);
   }
-
+/*
   $(document).ready(function(){
     console.log(topPos);
     if (isDirectory()) {
@@ -16,7 +16,7 @@ exec(function(){
     }
     selector.addClass('selected');
   });
-
+*/
   mote.io.remote = {
     api_version: '0.1',
     app_name: 'TwitchTV',
@@ -45,8 +45,8 @@ exec(function(){
                 console.log(topPos);
               }
               else{
-                selector.removeClass('selected');
-                selector.addClass('transparent');
+                $(selector).removeClass('selected');
+                $(selector).addClass('transparent');
                 topPos--;
                 if(isDirectory()){
                   selector = $('.boxart')[topPos];
@@ -56,8 +56,8 @@ exec(function(){
                 }
                 console.log(topPos);
               }
-              selector.removeClass('transparent');
-              selector.addClass('selected');
+              $(selector).removeClass('transparent');
+              $(selector).addClass('selected');
             },
             icon: 'chevron-left',
             hash: 'left'
@@ -98,8 +98,8 @@ exec(function(){
                 }
               }
               else{
-                selector.removeClass('selected');
-                selector.addClass('transparent');
+                $(selector).removeClass('selected');
+                $(selector).addClass('transparent');
                 if(isDirectory()){
                   if(topPos+1 !== $('.boxart').length) {topPos++}
                   selector = $('.boxart')[topPos];
@@ -108,8 +108,8 @@ exec(function(){
                   if(topPos+1 !== $('.meta').length) {topPos++}
                   selector = $('.meta')[topPos];
                 }
-                selector.removeClass('transparent');
-                selector.addClass('selected');
+                $(selector).removeClass('transparent');
+                $(selector).addClass('selected');
                 console.log(topPos);
               };
 
