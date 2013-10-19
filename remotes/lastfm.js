@@ -19,6 +19,11 @@ exec(function(){
           } else {
             mote.io.updateButton('love', null, '#000000', force);
           }
+          if($('radioControlSkip').hasClassName('disabled')) {
+            mote.io.updateButton('skip', null, '#dddddd', force);
+          } else {
+            mote.io.updateButton('skip', null, '#000000', force);
+          }
       },
       blocks: [
         {
@@ -48,7 +53,7 @@ exec(function(){
                     $$('#radioControlSkip a')[0].click();
                 },
                 icon: 'forward',
-                hash: 'next'
+                hash: 'skip'
             }
           ]
         }
