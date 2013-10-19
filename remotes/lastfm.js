@@ -7,23 +7,29 @@ exec(function(){
 	  display_input: true,
 	  init: function() {
       },
+      update: function(force) {
+          if($('webRadio').hasClassName('playing')) {
+            mote.io.updateButton('play', 'pause', null, force);
+          }
+          if($('webRadio').hasClassName('paused')) {
+            mote.io.updateButton('play', 'play', null, force);
+          }
+      },
       blocks: [
         {
           type: 'buttons',
           data: [
             {
                 press: function () {
-                    $$('#radioControlPlay a')[0].click();
+                if($('webRadio').hasClassName('playing')) {
+                  $$('#radioControlPause a')[0].click();
+                }
+                else if($('webRadio').hasClassName('paused')) {
+                  $$('#radioControlPlay a')[0].click();
+                }
                 },
                 icon: 'play',
                 hash: 'play'
-            },
-            {
-                press: function () {
-                    $$('#radioControlPause a')[0].click();
-                },
-                icon: 'pause',
-                hash: 'pause'
             },
             {
                 press: function () {
