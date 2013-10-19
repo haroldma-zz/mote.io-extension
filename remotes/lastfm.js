@@ -13,6 +13,20 @@ exec(function(){
           data: [
             {
                 press: function () {
+                    $$('#radioControlPlay a')[0].click();
+                },
+                icon: 'play',
+                hash: 'play'
+            },
+            {
+                press: function () {
+                    $$('#radioControlPause a')[0].click();
+                },
+                icon: 'pause',
+                hash: 'pause'
+            },
+            {
+                press: function () {
                     $$('#radioControlSkip a')[0].click();
                 },
                 icon: 'forward',
