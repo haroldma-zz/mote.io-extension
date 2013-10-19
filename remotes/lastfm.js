@@ -14,11 +14,23 @@ exec(function(){
           if($('webRadio').hasClassName('paused')) {
             mote.io.updateButton('play', 'play', null, force);
           }
+          if($('radioPlayer').hasClassName('loved')) {
+            mote.io.updateButton('love', null, '#ff0000', force);
+          } else {
+            mote.io.updateButton('love', null, '#000000', force);
+          }
       },
       blocks: [
         {
           type: 'buttons',
           data: [
+            {
+                press: function () {
+                  $$('#radioControlLove a')[0].click();
+                },
+                icon: 'heart',
+                hash: 'love'
+            },
             {
                 press: function () {
                 if($('webRadio').hasClassName('playing')) {
