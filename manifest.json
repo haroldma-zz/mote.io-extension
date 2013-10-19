@@ -147,6 +147,16 @@
         "remotes/plex.js"
       ],
       "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://www.last.fm/listen/*"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/lastfm.js"
+      ],
+      "run_at": "document_start"
     }
   ]
 }
