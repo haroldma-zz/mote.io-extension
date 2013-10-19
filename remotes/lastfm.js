@@ -8,6 +8,15 @@ exec(function(){
 	  init: function() {
       },
       update: function(force) {
+          if($('webRadio').hasClassName('preroll')) {
+            mote.io.updateButton('play', null, '#dddddd', force);
+            mote.io.updateButton('love', null, '#dddddd', force);
+            mote.io.updateButton('skip', null, '#dddddd', force);
+            return;
+          }
+          else {
+            mote.io.updateButton('play', null, '#000000', force);
+          }
           if($('webRadio').hasClassName('playing')) {
             mote.io.updateButton('play', 'pause', null, force);
           }
