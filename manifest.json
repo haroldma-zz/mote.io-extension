@@ -1,6 +1,6 @@
 {
   "name": "Mote.io",
-  "version": "1.3",
+  "version": "1.2",
   "manifest_version": 2,
   "description": "Control the sites you love remotely with Mote.io",
   "permissions": [
@@ -79,22 +79,26 @@
     },
     {
       "matches": [
-        "https://play.google.com/music/*"
-      ],
-      "js": [
-        "moteio.js",
-        "remotes/google-play-music.js"
-      ],
-      "run_at": "document_start"
-    },
-    {
-      "matches": [
         "*://*.soundcloud.com/*"
       ],
       "js": [
         "moteio.js",
         "remotes/soundcloud.js"
       ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://*.twitch.tv/*"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/twitch.js"
+      ],
+      "css": [
+        "twitch.css"
+      ],
+
       "run_at": "document_start"
     },
     {
