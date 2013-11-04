@@ -9,37 +9,37 @@ exec(function(){
   }
 
   var navigation = [{
-    optgroup: 'Popular Games',
+    optgroup: 'Popular',
     text: 'League of Legends',
     action: function(){
       window.location = "/directory/game/League%20of%20Legends";
     }
   }, {
-    optgroup: 'Popular Games',
+    optgroup: 'Popular',
     text: 'DOTA 2',
     action: function(){
       window.location = "/directory/game/Dota%202";
     }
   }, {
-    optgroup: 'Popular Games',
+    optgroup: 'Popular',
     text: 'Hearthstone: Heroes of Warcraft',
     action: function(){
       window.location = "/directory/game/Hearthstone%3A%20Heroes%20of%20Warcraft";
     }
   }, {
-    optgroup: 'Popular Games',
+    optgroup: 'Popular',
     text: 'Starcraft II: Heart of the Swarm',
     action: function(){
       window.location = "/directory/game/StarCraft%20II%3A%20Heart%20of%20the%20Swarm";
     }
   }, {
-    optgroup: 'Popular Games',
+    optgroup: 'Popular',
     text: 'M.U.G.E.N',
     action: function(){
       window.location = "/directory/game/M.U.G.E.N";
     }
   }, {
-    optgroup: 'Popular Games',
+    optgroup: 'Popular',
     text: 'More Games',
     action: function(){
       window.location = "/directory";
