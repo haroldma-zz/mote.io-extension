@@ -36,6 +36,12 @@ exec(function(){
       },
       blocks: [
         {
+          type: 'search',
+          action: function(query) {
+            window.location = "/listen/globaltags/" + encodeURIComponent(query);
+          }
+        },
+        {
           type: 'buttons',
           data: [
             {
