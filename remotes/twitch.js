@@ -1,42 +1,57 @@
 exec(function(){
   var astate = 1, vstate=1, topPos = 0, selector=null;
-
   var parts = window.location.pathname.split("/");
 
   var isDirectory = function(){
-    var res = window.location.href.search('game');
-    return (res===-1);
-  }
+    return (parts[1]==="directory");
+  };
+  
+  var isGame = function(){
+    return (parts[2]==="game");
+  };
+   
+  var load = function(){
+    topPos=0;
+    if(isGame()) {
+      selector = $('.cap')[topPos];
+    }
+    else {
+      selector = $('.boxart')[topPos];
+    }
+    $(selector).addClass('selected');
+  }; 
+
+  window.onload = load;
 
   var navigation = [{
     optgroup: 'Popular',
     text: 'League of Legends',
     action: function(){
-      window.location = "/directory/game/League%20of%20Legends";
+      window.location = "/directory/game/League%20of%20Legends/live";
     }
   }, {
     optgroup: 'Popular',
     text: 'DOTA 2',
     action: function(){
-      window.location = "/directory/game/Dota%202";
+      window.location = "/directory/game/Dota%202/live";
     }
   }, {
     optgroup: 'Popular',
     text: 'Hearthstone: Heroes of Warcraft',
     action: function(){
-      window.location = "/directory/game/Hearthstone%3A%20Heroes%20of%20Warcraft";
+      window.location = "/directory/game/Hearthstone%3A%20Heroes%20of%20Warcraft/live";
     }
   }, {
     optgroup: 'Popular',
     text: 'Starcraft II: Heart of the Swarm',
     action: function(){
-      window.location = "/directory/game/StarCraft%20II%3A%20Heart%20of%20the%20Swarm";
+      window.location = "/directory/game/StarCraft%20II%3A%20Heart%20of%20the%20Swarm/live";
     }
   }, {
     optgroup: 'Popular',
     text: 'M.U.G.E.N',
     action: function(){
-      window.location = "/directory/game/M.U.G.E.N";
+      window.location = "/directory/game/M.U.G.E.N/live";
     }
   }, {
     optgroup: 'Popular',
@@ -46,20 +61,7 @@ exec(function(){
     }
   }]; 
 
-/*
-  $(document).ready(function(){
-    console.log(topPos);
-    if (isDirectory()) {
-      selector = $('.boxart')[topPos];
-    } else {
-      selector = $('.meta')[topPos];
-    }
-    selector.addClass('selected');
-  });
-*/
-
-  if(parts[1] === "directory") {
-
+  if(isDirectory()) {
     mote.io.remote = {
       api_version: '0.1',
       app_name: 'Twitch.TV',
@@ -67,7 +69,6 @@ exec(function(){
       twitter: 'twitchtv',
       facebook: 'twitchtv',
       display_input: 'true',
-
       blocks: [
         {
           type: 'notify',
@@ -78,13 +79,12 @@ exec(function(){
           data: [
             {
               press: function() {
-                //debugger;
                 if(topPos-1<0 || selector===null){
-                  if(isDirectory()){
-                    selector = $('.boxart')[topPos];
+                  if(isGame()){
+                    selector = $('.cap')[topPos];
                   }
                   else{
-                    selector = $('.meta')[topPos];
+                    selector = $('.boxart')[topPos];
                   }
                   console.log(topPos);
                 }
@@ -92,11 +92,11 @@ exec(function(){
                   $(selector).removeClass('selected');
                   $(selector).addClass('transparent');
                   topPos--;
-                  if(isDirectory()){
-                    selector = $('.boxart')[topPos];
+                  if(isGame()){
+                    selector = $('.cap')[topPos];
                   }
                   else{
-                    selector = $('.meta')[topPos];
+                    selector = $('.boxart')[topPos];
                   }
                   console.log(topPos);
                 }
@@ -109,18 +109,19 @@ exec(function(){
             {
               press: function () {
                 if(selector===null){
-                  if(isDirectory()){
-                    selector = $('.boxart')[topPos];
+                  if(isGame()){
+                    selector = $('.cap')[topPos];
                   }
                   else{
-                    selector = $('.meta')[topPos];
+                    selector = $('.boxart')[topPos];
                   }
                   console.log(topPos);
                 }
                 
-                if(isDirectory()){
+                if(!isGame()){
                   selector.parentNode.click();
                   topPos = 0;
+                  window.location = window.location.pathname + "/live";
                 }
                 else{
                   $($('.meta')[topPos]).find('a')[0].click();
@@ -134,23 +135,23 @@ exec(function(){
               press: function() {
                 if(selector===null){
                   topPos=0;
-                  if(isDirectory()){
-                    selector = $('.boxart')[topPos];
+                  if(isGame()){
+                    selector = $('.cap')[topPos];
                   }
                   else{
-                    selector = $('.meta')[topPos];
+                    selector = $('.boxart')[topPos];
                   }
                 }
                 else{
                   $(selector).removeClass('selected');
                   $(selector).addClass('transparent');
-                  if(isDirectory()){
-                    if(topPos+1 !== $('.boxart').length) {topPos++}
-                    selector = $('.boxart')[topPos];
+                  if(isGame()){
+                    if(topPos+1 !== $('.cap').length) {topPos++}
+                    selector = $('.cap')[topPos];
                   }
                   else{
-                    if(topPos+1 !== $('.meta').length) {topPos++}
-                    selector = $('.meta')[topPos];
+                    if(topPos+1 !== $('.boxart').length) {topPos++}
+                    selector = $('.boxart')[topPos];
                   }
                   $(selector).removeClass('transparent');
                   $(selector).addClass('selected');
@@ -181,7 +182,6 @@ exec(function(){
       twitter: 'twitchtv',
       facebook: 'twitchtv',
       display_input: 'true',
-
       blocks: [
         {
           type: 'notify',
@@ -195,12 +195,12 @@ exec(function(){
                 if(vstate===1){
                   $('object[data$=TwitchPlayer\\.swf]')[0].pauseVideo();
                   vstate=0;
-                  mote.io.updateButton('play', 'pause', null, false);
+                  mote.io.updateButton('play', 'play', null, false);
                 }
                 else{
                   $('object[data$=TwitchPlayer\\.swf]')[0].playVideo();
                   vstate=1;
-                  mote.io.updateButton('play', 'play', null, false);
+                  mote.io.updateButton('play', 'pause', null, false);
                 }
               },
               icon: 'pause',
@@ -211,12 +211,12 @@ exec(function(){
                 if(astate===1){
                   $('object[data$=TwitchPlayer\\.swf]')[0].mute();
                   astate=0;
-                  mote.io.updateButton('sound', 'volume-off', null, false);
+                  mote.io.updateButton('sound', 'volume-up', null, false);
                 }
                 else{
                   $('object[data$=TwitchPlayer\\.swf]')[0].unmute();
                   astate=1;
-                  mote.io.updateButton('sound', 'volume-up', null, false);
+                  mote.io.updateButton('sound', 'volume-off', null, false);
                 }
               },
               icon: 'volume-up',
@@ -234,8 +234,8 @@ exec(function(){
           type: 'select',
           title: 'Change Page',
           data: navigation
-        }]
-
+        }
+      ]
     }
   }
 

@@ -131,6 +131,16 @@
         "remotes/google-drive-presentation.js"
       ],
       "run_at": "document_start"
+    },
+    {
+       "matches": [
+        "*://play.spotify.com/*"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/spotify.js"
+      ],
+      "run_at": "document_start" 
     }
   ]
 }
