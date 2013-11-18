@@ -157,6 +157,19 @@
         "remotes/lastfm.js"
       ],
       "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://*.twitch.tv/*"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/twitch.js"
+      ],
+      "css": [
+        "css/twitch.css"
+      ],
+      "run_at": "document_start"
     }
   ]
 }

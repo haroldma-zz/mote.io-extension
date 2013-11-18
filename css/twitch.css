@@ -1,0 +1,17 @@
+.selected {
+/*  border: 1px solid #357b95;
+  box-shadow: 0px 0px 10px #357b95;*/
+  opacity: 0.5;
+  border-radius: 10px
+  max-width: 100%
+  max-height: 100%
+}
+
+.transparent {
+/*  border: 0px solid transparent;
+  box-shadow: 0px 0px 0px transparent;*/
+  opacity: 1;
+  border-radius: 0px
+  max-width: 100%
+  max-height: 100%
+}
