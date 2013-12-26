@@ -11,6 +11,14 @@ Here's how you can get your remote into the production version of the Mote.io ex
 
 I'll review your code, merge your remote in, and then deploy it to the world!
 
+# Sites that need support:
+
+* Reddit tv (http://reddit.tv)
+* Slide Share (http://www.slideshare.net)
+* Google Drive (http://drive.google.com)
+* Spotify Web (https://play.spotify.com)
+* Plex Web (http://plex.tv/web)
+
 # Development Cycle
 
 Mote.io remotes work by clicking and inspecting objects in the DOM. When a button is pressed on the phone, it fires a function which should probably click something on the page.
