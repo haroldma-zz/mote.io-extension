@@ -170,6 +170,16 @@
         "css/twitch.css"
       ],
       "run_at": "document_start"
+    },
+    {
+      "matches":[
+        "https://play.spotify.com/*"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/spotify.js"
+      ],
+      "run_at": "document_start"
     }
   ]
 }
