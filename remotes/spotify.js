@@ -8,6 +8,10 @@ exec(function(){
 	  init: function() {
       },
       update: function(force) {
+          /* CAREFUL!!
+           * $() is mootools on play.spotify.com, NOT jquery.
+           * use jQ() if you want jquery.
+           */
           var player = $('app-player').contentDocument;
 
           var trackArtist;
