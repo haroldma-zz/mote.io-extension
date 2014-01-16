@@ -17,7 +17,7 @@ exec(function(){
           var trackArtist;
           try { trackArtist = player.getElementById('track-artist').innerText; }
           catch(e) { console.log(e); trackArtist = ""; }
-            
+
           var trackName;
           try { trackName = player.getElementById('track-name').innerText; }
           catch(e) { console.log(e); trackName = ""; }
@@ -38,8 +38,6 @@ exec(function(){
           var playPause = player.getElementById('play-pause');
           var next = player.getElementById('next');
 
-          
-
           var playPauseIcon = playPause.classList.contains('playing') ? 'pause' : 'play';
           mote.io.updateButton('playPause', playPauseIcon, null, force);
 
@@ -47,7 +45,7 @@ exec(function(){
           var current = player.getElementById('track-current').innerHTML
           var length = player.getElementById('track-length').innerHTML
           */
-         
+
           /* @todo stars
           player.getElementById('widget-more').click();
           jQ('#sb').mousedown()
@@ -61,7 +59,7 @@ exec(function(){
 
           function updateButtonColors(buttons) {
             for (var name in buttons) {
-                var color = buttons[name].classList.contains('disabled') ? '#dddddd' : '#:000000';
+                var color = buttons[name].classList.contains('disabled') ? '#dddddd' : '#434345';
                 mote.io.updateButton(name, null, color, force);
             }
           }
