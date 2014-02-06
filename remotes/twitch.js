@@ -133,7 +133,7 @@ exec(function(){
                   selector.parentNode.click();
                   topPos = 0;
                 } else {
-                  $($('.stream.item')[topPos]).find('a')[0].click();
+                  window.location = $($($('.stream.item')[topPos]).find('a')[0]).attr('href');
                   topPos = 0;
                 }
 
