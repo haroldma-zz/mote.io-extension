@@ -10,6 +10,30 @@ exec(function () {
                 jQ('.player-middle').children()[4].setAttribute('value', 'ALL_SHUFFLE');
             }
             jQ('.player-middle').children()[2].click();
+
+
+            function fireWhenReady() {
+
+                if (jQ('.song-row td[data-col="title"] span.content.tooltip').length) {
+
+                    setTimeout(function () {
+                        var button = jQ('<div></div>').attr('id', 'b2');
+                        button.addClass('hover-button');
+                        button.attr('data-id', 'play');
+                        jQ('.song-row td[data-col="title"] span.content.tooltip').eq(0).append(button);
+                        jQ('#b2').trigger('click');
+                    }, 1000);
+
+                } else {
+
+                    setTimeout(fireWhenReady, 100);
+
+                }
+
+            }
+            fireWhenReady();
+
+
         },
         update: function (force) {
 
@@ -51,30 +75,8 @@ exec(function () {
         }, {
             type: 'search',
             action: function (query) {
+
                 window.location = "https://play.google.com/music/listen#/sr/" + encodeURIComponent(query);
-
-                function fireWhenReady() {
-
-                    if (jQ('.song-row td[data-col="title"] span.content.tooltip').length) {
-
-                        setTimeout(function () {
-                            var button = jQ('<div></div>').attr('id', 'b2');
-                            button.addClass('hover-button');
-                            button.attr('data-id', 'play');
-                            jQ('.song-row td[data-col="title"] span.content.tooltip').eq(0).append(button);
-                            jQ('#b2').trigger('click');
-                        }, 1000);
-
-                    } else {
-
-                        setTimeout(fireWhenReady, 100);
-
-                    }
-
-                }
-                fireWhenReady();
-
-
             }
         }, {
             type: 'buttons',
