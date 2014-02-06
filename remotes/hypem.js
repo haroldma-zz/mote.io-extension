@@ -28,8 +28,8 @@ exec(function(){
 	      active = $($('.section-track')[0]);
 	    }
 
-	    var thisArtist = $($('#player-nowplaying a')[3]).text(),
-	      thisSong = $($('#player-nowplaying a')[4]).text(),
+	    var thisArtist = $($('#player-nowplaying a')[0]).text(),
+	      thisSong = $($('#player-nowplaying a')[1]).text(),
 	      thisImage = extractUrl(active.find('.readpost > span').css('background-image')),
 	      thisPerma = window.location.origin + active.find('a.track').attr('href');
 
