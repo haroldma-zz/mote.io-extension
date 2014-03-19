@@ -170,6 +170,16 @@
         "css/twitch.css"
       ],
       "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://*.bandcamp.com/*"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/bandcamp.js"
+      ],
+      "run_at": "document_start"
     }
   ]
 }
