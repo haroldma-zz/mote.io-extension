@@ -8,10 +8,25 @@ exec(function(){
 	  }
 	}
 
+  function autoplay(){
+    if(jQ('.search_section_title').length) {
+      jQ('.create_station')[0].click()
+    } else {
+      setTimeout(function(){
+        autoplay();
+      }, 500);
+    }
+  }
+
 	mote.io.remote = {
     api_version: '0.1',
     app_name: 'Pandora',
     display_input: true,
+    init: function() {
+
+      autoplay();
+
+    },
     update: function(force) {
 
       var thisArtist = $('.playerBarSong').text(),
@@ -43,6 +58,12 @@ exec(function(){
       {
         type: 'notify',
         share: false
+      },
+      {
+        type: 'search',
+        action: function(query) {
+          window.location = "http://www.pandora.com/search/" + encodeURIComponent(query);
+        }
       },
       {
         type: 'buttons',
