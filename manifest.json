@@ -180,10 +180,10 @@
         "remotes/spotify.js"
       ],
       "run_at": "document_start"
-    }
+    },
     {
       "matches":[
-        "www.stumbleupon.com/*"
+        "*://*.stumbleupon.com/*"
       ],
       "js": [
         "moteio.js",
@@ -191,5 +191,6 @@
       ],
       "run_at": "document_start"
     }
+    
   ]
 }
