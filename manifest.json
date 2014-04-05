@@ -181,5 +181,15 @@
       ],
       "run_at": "document_start"
     }
+    {
+      "matches":[
+        "www.stumbleupon.com/*"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/stumbleupon.js"
+      ],
+      "run_at": "document_start"
+    }
   ]
 }
