@@ -7,7 +7,28 @@ exec(function(){
     twitter: 'imgur',
     action: 'Checking out images on',
     update: function(force) {
+
+      if($('#mainDownArrow').hasClass('arrow down  title pushed')) {
+    mote.io.updateButton('down', null, '#ff0000', force);
+    } else {
+    mote.io.updateButton('down', null, '#434345', force);
+    }
+
+      if($('#mainUpArrow').hasClass('arrow up title pushed')) {
+    mote.io.updateButton('up', null, '#00ff00', force);
+    } else {
+    mote.io.updateButton('up', null, '#434345', force);
+    }
+
+      if($('#favorite-image').hasClass('title favorited')) {
+    mote.io.updateButton('fav', null, '#ff0000', force);
+    } else {
+    mote.io.updateButton('fav', null, '#434345', force);
+    }
+
+
     },
+
     blocks: [
 
       {
@@ -59,7 +80,7 @@ exec(function(){
       {
         type: 'buttons',
         data: [
-        
+
           {
             press: function () {
               window.location = "http://www.imgur.com/";
