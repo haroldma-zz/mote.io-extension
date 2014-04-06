@@ -9,39 +9,73 @@ exec(function(){
     update: function(force) {
     },
     blocks: [
+
       {
         type: 'buttons',
         data: [
           {
             press: function () {
-              //$('.prev').click();
+              $('#tb-notlike a').click();
             },
-            icon: 'backward',
+            icon: 'thumbs-down',
             hash: 'dislike',
           },
           {
             press: function () {
-              //$('.play_pause').click();
+              $('#tb-stumble a').click();
             },
-            icon: 'play',
+            icon: 'legal',
             hash: 'stumble',
           },
           {
             press: function () {
-              //$('.next').click();
+              $('#tb-like a, ').click();
             },
-            icon: 'forward',
+            icon: 'thumbs-up',
             hash: 'like',
-          },
-          {
-            press: function () {
-              //$('.shuffle').click();
-            },
-            icon: 'random',
-            hash: 'random',
           }
         ]
       },
+      {
+      type: 'select',
+      data: [
+        {
+          
+          text: 'All Interests',
+          action: function() {
+          $("[data-contextual='All Interests']").click();
+          }
+        },
+        {
+          
+          text: 'Activity',
+          action: function() {
+          //window.location = "/latest/fresh";
+          }
+        },
+        {
+          
+          text: 'Trending',
+          action: function() {
+          $("[data-contextual='Trending']").click();
+          }
+        },
+        {
+          
+          text: 'Photos',
+          action: function() {
+          $("[data-contextual='Photos']").click();
+          }
+        },
+        {
+          
+          text: 'Videos',
+          action: function() {
+          $("[data-contextual='Videos']").click();
+          }
+        },                        
+      ]
+      }
     ]
   };
 

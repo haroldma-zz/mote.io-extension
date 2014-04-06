@@ -183,11 +183,11 @@
     },
     {
       "matches":[
-        "*://*.stumbleupon.com/*"
+        "*://*.imgur.com/*"
       ],
       "js": [
         "moteio.js",
-        "remotes/stumbleupon.js"
+        "remotes/imgur.js"
       ],
       "run_at": "document_start"
     }
