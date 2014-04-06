@@ -8,19 +8,22 @@ exec(function(){
     action: 'Checking out images on',
     update: function(force) {
 
-      if($('#mainDownArrow').hasClass('arrow down  title pushed')) {
+      if($('#mainDownArrow').hasClass('arrow down  title pushed') || 
+        $('#mainDownArrow').hasClass('arrow down title pushed')) {
     mote.io.updateButton('down', null, '#ff0000', force);
     } else {
     mote.io.updateButton('down', null, '#434345', force);
     }
 
-      if($('#mainUpArrow').hasClass('arrow up title pushed')) {
+      if($('#mainUpArrow').hasClass('arrow up title pushed') || 
+        $('#mainUpArrow').hasClass('arrow up  title pushed')) {
     mote.io.updateButton('up', null, '#00ff00', force);
     } else {
     mote.io.updateButton('up', null, '#434345', force);
     }
 
-      if($('#favorite-image').hasClass('title favorited')) {
+      if($('#favorite-image').hasClass('title favorited') ||
+        $('#favorite-image').hasClass('title  favorited')) {
     mote.io.updateButton('fav', null, '#ff0000', force);
     } else {
     mote.io.updateButton('fav', null, '#434345', force);
@@ -51,7 +54,7 @@ exec(function(){
                    
         ]
       },
-{
+      {
         type: 'buttons',
         data: [
           {
@@ -92,7 +95,7 @@ exec(function(){
             press: function () {
               $('.post:first a img').click();
             },
-            icon: 'th',
+            icon: 'play',
             hash: 'firstPost',
           },
           {
@@ -112,8 +115,7 @@ exec(function(){
 
         ]
       }
-
-    ]
-  };
+      ]
+    };
 
 });
