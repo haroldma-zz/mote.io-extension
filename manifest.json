@@ -180,6 +180,16 @@
         "remotes/spotify.js"
       ],
       "run_at": "document_start"
+    },
+    {
+      "matches":[
+        "http://gabrielecirulli.github.io/2048/"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/2048.js"
+      ],
+      "run_at": "document_start"
     }
   ]
 }
