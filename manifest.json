@@ -109,8 +109,7 @@
     },
     {
       "matches": [
-        "http://localhost:8080/",
-        "*://moteioyoutube-9226.onmodulus.net/"
+        "*://mote.io/apps/youtube*"
       ],
       "js": [
         "moteio.js",
