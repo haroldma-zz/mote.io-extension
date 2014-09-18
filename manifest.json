@@ -179,6 +179,17 @@
         "remotes/spotify.js"
       ],
       "run_at": "document_start"
+    },
+    {
+      "matches":[
+        "*://*.imgur.com/*"
+      ],
+      "js": [
+        "moteio.js",
+        "remotes/imgur.js"
+      ],
+      "run_at": "document_start"
     }
+    
   ]
 }
