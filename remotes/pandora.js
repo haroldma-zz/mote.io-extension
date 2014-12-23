@@ -103,6 +103,22 @@ exec(function(){
             icon: 'fast-forward',
             hash: 'skip',
             leapmotion: 'swipe-left'
+          },
+          {
+            press: function () {
+              var $current = $('.stationListItem.selected');
+              // Get the next station
+              var $next = $current.next('.stationListItem');
+              // If there wasn't a next one, go back to the first.
+              if( $next.length == 0 ) {
+                  // Go to the beginning; skip the shuffle button.
+                  $next = $current.prevAll('.stationListItem').last().next();
+              }
+              $next.click();
+            },
+            icon: 'fast-forward',
+            hash: 'skip-station',
+            leapmotion: 'swipe-left'
           }
         ]
       },
